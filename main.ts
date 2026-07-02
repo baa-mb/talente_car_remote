@@ -6,6 +6,7 @@ function neigungen () {
     gerade = Math.min(Math.max(input.rotation(Rotation.Pitch), -45), 45)
     gerade = Math.round(gerade / g_empfind) * g_empfind
     kurve = Math.min(Math.max(input.rotation(Rotation.Roll), -45), 45)
+    kurve = kurve / 1.5
 }
 input.onButtonPressed(Button.B, function () {
     radio.sendValue("get_dist", 1)
