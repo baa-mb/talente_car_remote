@@ -6,7 +6,7 @@ function neigungen () {
     gerade = Math.min(Math.max(input.rotation(Rotation.Pitch), -45), 45)
     gerade = Math.round(gerade / g_empfind) * g_empfind
     kurve = Math.min(Math.max(input.rotation(Rotation.Roll), -45), 45)
-    kurve = kurve / 1.5
+    kurve = kurve / 5
 }
 input.onButtonPressed(Button.B, function () {
     radio.sendValue("get_dist", 1)
@@ -29,7 +29,7 @@ let gerade = 0
 let g_empfind = 0
 radio.setGroup(99)
 basic.showString("99")
-g_empfind = 5
+g_empfind = 1
 let ist_oben = true
 let alt_gerade = -99
 let alt_kurve = -99
