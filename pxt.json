@@ -1,5 +1,5 @@
 {
-    "name": "talente_car_60_remote",
+    "name": "talente_car_remote",
     "description": "",
     "dependencies": {
         "core": "*",
