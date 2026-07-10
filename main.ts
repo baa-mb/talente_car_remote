@@ -4,7 +4,7 @@ control.onEvent(EventBusSource.MICROBIT_ID_BUTTON_A, EventBusValue.MICROBIT_BUTT
 function sende_stopp () {
     radio.sendValue("gerade", 0)
     radio.sendValue("kurve", 0)
-    radio.sendValue("stopp", 0)
+    radio.sendValue("stopp", beweg_flag ? 1:0)
 }
 function neigungen () {
     gerade = Math.min(Math.max(input.rotation(Rotation.Pitch), -45), 45)
