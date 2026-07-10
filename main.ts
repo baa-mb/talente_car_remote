@@ -4,6 +4,7 @@ control.onEvent(EventBusSource.MICROBIT_ID_BUTTON_A, EventBusValue.MICROBIT_BUTT
 function sende_stopp () {
     radio.sendValue("gerade", 0)
     radio.sendValue("kurve", 0)
+    radio.sendValue("stopp", 0)
 }
 function neigungen () {
     gerade = Math.min(Math.max(input.rotation(Rotation.Pitch), -45), 45)
@@ -12,9 +13,10 @@ function neigungen () {
     kurve = kurve / 5
 }
 input.onButtonPressed(Button.AB, function () {
+    music.play(music.tonePlayable(262, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
     beweg_flag = !(beweg_flag)
     if (beweg_flag) {
-        basic.showString("A")
+        basic.showString("B")
     } else {
         basic.showLeds(`
             . . . . .
